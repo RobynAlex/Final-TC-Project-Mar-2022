@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="digitalclock_style.css">
+  <script type="text/javascript">
+    window.onload = setInterval(clock,1000);
+
+    function clock()
+    {
+	  var d = new Date();
+	  
+	  var date = d.getDate();
+	  
+	  var month = d.getMonth();
+	  var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+	  month=montharr[month];
+	  
+	  var year = d.getFullYear();
+	  
+	  var day = d.getDay();
+	  var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+	  day=dayarr[day];
+	  
+	  var hour =d.getHours();
+    var min = d.getMinutes();
+	  var sec = d.getSeconds();
+	
+	  document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
+	  document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
+    }
+  </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Time</title>
+</head>
+<body>
+    <div id="digital-clock"></div>
+    <h1>Animated Clock Time in Omaha</h1>
+   <p id="date"></p>
+   <p id="time"></p>
+   <div class="weather">
+      <div class="m_now">
+       <h2>
+        <strong>🌡️Weather in Omaha Now</strong>
+       </h2>
+       <div class="my_temp">
+           <span>43°/</span>
+           <strong>59°</strong>
+        </div>
+      </div>
+     <ul>
+     <li class="my_tom">
+      <div>☀️Tomorrow</div>
+      <p>32°/
+          <strong>61°</strong>
+      </p>
+     </li>
+     <li class="my_sat">
+      <div>🌤️Saturday</div>
+      <p>29°/
+        <strong>63°</strong>
+      </p>
+     </li>
+     <li class="my_sun">
+      <div>🌞Sunday</div>
+      <p>33°/
+        <strong>68°</strong>
+      </p>
+     </li>
+     <li class="my_mon">
+      <div>🌧️Monday</div>
+      <p>41°/
+        <strong>59°</strong>
+      </p>
+     </li>
+     </ul>
+   </div>
+</body>
+</html>
